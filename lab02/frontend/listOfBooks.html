@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book</title>
+</head>
+<body>
+    List of top selling book!
+    <table>
+        <th>
+            <td>ISBN</td>
+            <td>Title</td>
+            <td>Price</td>
+            <td>Image</td>
+        </th>
+        <tr>
+            <td></td>
+            <td>1111</td>
+            <td>Computer Basics</td>
+            <td>100</td>
+            <td><img src="img01.jpg" alt="" width="50px"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>1112</td>
+            <td>Practical Computing</td>
+            <td>150</td>
+            <td><img src="img02.jpg" alt="" width="50px"></td>
+        </tr>
+    </table>
+    <form action="/sell" method="get">
+        ISBN<input type="number" name="isbn" id=""><br>
+        amount<input type="number" name="amount" id="">
+        <input id="btn" style="position: relative; transition: 0.1s;" onmouseover="hover()" type="submit" value="Order this book">
+    </form>
+</body>
+<script>
+    const btn = document.getElementById('btn');
+
+    function hover() {
+        let top = Math.floor(Math.random() * 400);
+        let left = Math.floor(Math.random() * 400);
+        btn.style.top =  (top > 200 ? top : top + 200) +'px';
+        btn.style.left = (left > 200 ? left : left + 200) +'px';
+        btn.innerHTML = 'Nope!';
+    }
+</script>
+</html>

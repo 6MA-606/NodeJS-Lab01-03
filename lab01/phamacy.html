@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phamacy Shop</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+</head>
+
+<body class="select-none">
+    <h3>Welcome to Boss Phamacy Shop</h3>
+
+    <select name="" id="medicine">
+        <option value="Paracetamol">Paracetamol: 5 baht/pill</option>
+        <option value="Aspirin">Aspirin: 4 baht/pill</option>
+        <option value="Ibuprofen">Ibuprofen: 2 baht/pill</option>
+        <option value="Cetirizine">Cetirizine: 3 baht/pill</option>
+        <option value="Loratadine">Loratadine: 6 baht/pill</option>
+    </select>
+    <br>How many pill do you want to buy?
+    <input type="number" name="" id="amount">
+    <input type="button" value="Show price" onclick="calculatePrice()">
+    <br>You have to pay: <input type="number" name="" id="total" value="0" disabled> baht.</input>
+    <br>
+    <!-- <button 
+        id="btn" 
+        onclick="() => {alert('meow')}" 
+        onmouseenter="handleClick()"
+        class="top-0 left-0 relative bg-neutral-500 text-white text-xl font-bold px-6 py-2 rounded-xl hover:bg-orange-500 transition-all"
+    >
+        Buy
+    </button> -->
+    <button 
+        id="btn" 
+        onclick="() => {alert('meow')}" 
+        onmouseover="handleClick()"
+        style="top:0; left: 0; position: relative; transition: 0.2s;"
+    >
+        Buy
+    </button>
+</body>
+<script>
+    const btn = document.getElementById('btn');
+
+const handleClick = () => {
+    let top = Math.floor(Math.random() * 400);
+    let left = Math.floor(Math.random() * 400);
+    btn.style.top =  (top > 200 ? top : top + 200) +'px';
+    btn.style.left = (left > 200 ? left : left + 200) +'px';
+    btn.innerHTML = 'Nope!';
+}
+
+const calculatePrice = () => {
+    userAmount = document.getElementById('amount').value;
+    userMed = document.getElementById('medicine').value;
+
+    switch(userMed) {
+        case 'Paracetamol':
+            price = 5;
+            break;
+        case 'Aspirin':
+            price = 4;
+            break;
+        case 'Ibuprofen':
+            price = 2;
+            break;
+        case 'Cetirizine':
+            price = 3;
+            break;
+        case 'Loratadine':
+            price = 6;
+            break;
+        default:
+            price = 0;
+    }
+
+    total = userAmount * price;
+    document.getElementById('total').value = total;
+}
+</script>
+
+</html>

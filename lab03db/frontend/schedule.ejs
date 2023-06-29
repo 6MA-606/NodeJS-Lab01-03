@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Time Table</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h2>Bus Schdule of <%= busRouteNumber %></h2>
+    <%
+        var mes = "Thonburi";
+        var no = "Non-Thon";
+        if (busRouteNumber == 75 || busRouteNumber == 21) {
+    %>
+    <%= mes %>
+    <% } else { %>
+    <%= no %>
+    <% } %>
+
+    <table>
+        <thead>
+            <th>Location</th>
+            <th>Time</th>
+        </thead>
+        <tbody>
+            <% schedule.forEach(data => { %>
+                <tr>
+                    <td><%=data.stopstation %></td>
+                    <td><%=data.stoptime %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</body>
+</html>

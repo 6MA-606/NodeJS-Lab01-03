@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangkok Bus</title>
+    <style>
+        fieldset {
+            width: fit-content;
+        }
+        fieldset > form > * {
+            font-size: small;
+            margin: .25em 0 .25em 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to BMT</h1>
+    We provide the best bus services around Bangkok.
+    <br>
+    <a href="/showRoute">Show Route</a>
+    <br>
+    <br>
+    <fieldset>
+        <legend>Add new bus</legend>
+        <form action="/addNewBus" method="get">
+            <label for="">Bus Number:</label>
+            <input type="text" name="busNum" id="busNum_input">
+            <br>
+            <label for="">Ticket Price</label>
+            <input type="number" name="price" id="price_input">
+            <br>
+            <label for="">Start Location</label>
+            <input type="text" name="start" id="start_input">
+            <br>
+            <label for="">End Location</label>
+            <input type="text" name="end" id="end_input">
+            <br>
+            <input type="submit" value="Add">
+        </form>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>Show bus schedule</legend>
+        <form action="/showSchedule" method="get">
+            <label for="">Bus Number:</label>
+            <input type="text" name="busNum" id="busNum_input">
+            <br>
+            <label for="">Start time</label>
+            <input type="time" name="startTime" id="startTime_input">
+            <br>
+            <input type="submit" value="Show Schedule">
+        </form>
+    </fieldset>
+</body>
+</html>
